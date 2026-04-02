@@ -31,5 +31,8 @@
 ;; Eldoc global enable.
 (setq global-eldoc-mode t)
 
+;; pair mode.
+(electric-pair-mode t)
+
 (provide 'eclip-edit)
 ;;; eclip-edit.el ends here
