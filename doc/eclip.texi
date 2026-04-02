@@ -1,0 +1,166 @@
+\input texinfo-zh
+@c -*-texinfo-*-
+@c %**start of header
+@setfilename eclip.info
+@settitle Eclip a lightweight config for GNU Emacs
+@c %**end of header
+@copying
+This configuration focuses on Emacs built-in features to ensure consistent key bindings in polyglot development..
+
+Copyright @copyright{} 2026  Stalk Evolto
+
+@quotation
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.3
+or any later version published by the Free Software Foundation;
+with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
+A copy of the license is included in the section entitled ``GNU
+Free Documentation License''.
+
+A copy of the license is also available from the Free Software
+Foundation Web site at @url{https://www.gnu.org/licenses/fdl.html}.
+
+@end quotation
+
+The document was typeset with
+@uref{https://www.gnu.org/software/texinfo/, GNU Texinfo}.
+
+@end copying
+
+@titlepage
+@title Eclip a lightweight config for GNU Emacs
+@subtitle This configuration focuses on Emacs built-in features to ensure consistent key bindings in polyglot development.
+@author Stalk Evolto @email{stalk-evolto@@outlook.com}
+@page
+@vskip 0pt plus 1filll
+@insertcopying
+@end titlepage
+
+@c Output the table of the contents at the beginning.
+@contents
+
+@ifnottex
+@node Top, 简介, (dir), (dir)
+@top Eclip a lightweight config for GNU Emacs
+
+@insertcopying
+@end ifnottex
+
+@menu
+* 简介::
+* 安装::
+* 编写之禅::
+* 按键设计::
+* GNU Free Documentation License::
+* Index::
+@end menu
+
+@node 简介, 安装, Top, Top
+@chapter Emacs Configurations
+
+这篇文档是 GNU Emacs 的配置文件 Eclip 的文档。
+
+@node 安装, 编写之禅, 简介, Top
+@chapter 安装 Eclip
+
+安装 Eclip 只需要使用 @uref{https://git-scm.com, Git} 将整个仓库 @code{clone} 到本地，将其替换 Emacs 的 user-emacs-directory。
+
+@example
+git clone
+mv eclip ~/.emacs.d
+@end example
+
+@node 编写之禅, 按键设计, 安装, Top
+@chapter 编写之禅
+
+Eclip 的编写理念:
+
+@itemize @bullet{}
+@item
+尽量使用 Emacs master 分支里的组件，更轻量。
+@item
+文件结构分明，易于配置与修改。
+@item
+不偏离 Emacs manual 中的按键绑定，配置出错也能快速适应 @code{Emacs -Q} 启动修复。
+@end itemize
+
+@node 按键设计, GNU Free Documentation License, 编写之禅, Top
+@chapter 按键设计
+
+我对 Emacs 按键设计的个人理解。
+
+@menu
+* 常用行动::
+* 作大修改::
+* 寻求帮助::
+@end menu
+
+@node 常用行动, 作大修改, 按键设计, 按键设计
+@section 常用行动
+
+常用行动绑定便于一次按出的组合建，使用 C- 的按键为基础操作， M- 的按键为补充， 仍需补充则使用 C-u 作为前缀。
+@table @code
+@item C-f
+forward-char 向前移动一个字符
+@item M-f
+forward-word 向前移动一个单词像是
+@item C-u 2 C-f
+向前移动两个字符
+@end table
+
+@node 作大修改, 寻求帮助, 常用行动, 按键设计
+@section 作大修改
+
+做大修改通常使用 C-x 前缀按键。
+@table @code
+@item C-x C-f
+@code{find-file} 查找并打开文件
+@item C-x 2
+垂直打开一个 window
+@item C-x v =
+版本控制 diff
+@end table
+
+@node 寻求帮助,  , 作大修改, 按键设计
+@section 寻求帮助
+
+帮助通常使用 C-h 作为前缀按键。
+@table @code
+@item C-h k @{key-bindings@}
+@code{describe-key} 查找一个绑定按键的帮助
+@item C-h w @{command@}
+@code{where-is} 查找一个命令的按键绑定
+@item C-h i
+@code{info} 打开 info
+@item C-h b
+@code{discribe-bindings} 打开按键绑定列表
+@item C-h m
+@code{discribe-mode} 打开当前 buffer 启用的 mode 列表
+@item C-h v
+@code{discribe-variable} 显示 Emacs 变量信息
+@item C-h f
+@code{discrube-function} 显示函数信息
+@end table
+
+@node Eclip 编写与拓展
+@chapter Eclip 编写与拓展
+
+Eclip 目录结构
+
+@example
+@end example
+
+@table
+
+@node GNU Free Documentation License, Index, 按键设计, Top
+@appendix GNU Free Documentation License
+@cindex license, GNU Free Documentation License
+@c Get fdl.texi from https://www.gnu.org/licenses/fdl.html
+@include fdl.texi
+
+@node Index,  , GNU Free Documentation License, Top
+@unnumbered Index
+
+@printindex cp
+
+@bye
