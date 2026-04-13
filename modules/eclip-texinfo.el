@@ -27,6 +27,10 @@
 (require 'texinfo)
 
 (defun texinfo-enclosing-command-start ()
+  "Find texinfo command start. Example, The * is point
+	@code{The *code}
+	@code*{The code}
+	@code{The code}* -> *@code{The code}"
   (cond
    ((looking-at "@[a-zA-Z]+\{") (point))
    ((ignore-errors (progn
@@ -43,6 +47,8 @@
       (texinfo-enclosing-command-start)))))
 
 (defun texinfo-delete-markup ()
+  "Delete Texinfo command markup.
+	@code{The code}* -> The code*"
   (interactive)
   (if (texinfo-enclosing-command-start)
       (let ((delete-start (texinfo-enclosing-command-start))
