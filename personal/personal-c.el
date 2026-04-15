@@ -34,27 +34,4 @@
   (setenv "LD_LIBRARY_PATH" (getenv "LIBRARY_PATH")))
 (add-hook 'c-mode-common-hook #'setenv-ld-library-path)
 
-;; set gtags.
-(autoload 'gtags-mode "gtags" "" t)
-(require 'gtags)
-(require 'hl-line)
-(add-hook 'gtags-select-mode-hook
-          (lambda ()
-            (setq hl-line-face 'underline)
-            (hl-line-mode 1)))
-(add-hook 'c-mode-hook
-          (lambda ()
-            (gtags-mode 1)))
-(setq gtags-suggested-key-mapping t)
-(setq gtags-auto-update t)
-
-;; set semantic.
-(require 'cc-mode)
-(require 'semantic)
-(add-hook 'c-mode-common-hook
-          (lambda ()
-            (dolist (include-path c-include-path)
-              (semantic-add-system-include include-path))
-            (setq semantic-c-dependency-system-include-path c-include-path)))
-
 ;;; personal-c.el ends here

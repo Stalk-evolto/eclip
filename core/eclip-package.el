@@ -8,11 +8,13 @@
 (setq package-pinned-packages
       '(
         (geiser . "melpa-stable")
-	(paredit . "melpa-stable")))
+	(paredit . "melpa-stable")
+	(oauth2 . "gnu")
+	))
 
 ;; Some packages eclip need.
 (setq core-packages
-      '(geiser paredit))
+      '(geiser paredit oauth2))
 
 ;; Install the packages eclip need.
 (mapc #'(lambda (package)

@@ -24,7 +24,11 @@
 
 ;;; Code:
 
-
+(require 'geiser)
+(require 'guix-devel)
+(require 'guix-prettify)
+(add-hook 'after-init-hook 'global-guix-prettify-mode)
+(add-hook 'scheme-mode-hook 'guix-devel-mode)
 
 (provide 'eclip-scheme)
 ;;; eclip-scheme.el ends here
