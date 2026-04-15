@@ -44,10 +44,11 @@
 ;; set hs-minor for create hide.
 (add-hook 'c-mode-common-hook 'hs-minor-mode)
 
+(require 'gdb-mi)
 ;; Set gdb many windows.
 (setq
  ;; use gdb-many-windows by default
- gdb-manoy-windows t
+ gdb-many-windows t
 
  ;; Non-nil means display source file containing the main routine at startup
  gdb-show-main t)

@@ -24,38 +24,40 @@
 
 ;;; Code:
 
-(use-package ellama
-  :ensure t
-  :bind ("C-c x" . ellama)
-  ;; send last message in chat buffer with C-c C-c
-  :hook (org-ctrl-c-ctrl-c-final . ellama-chat-send-last-message)
-  :init
-  (setopt ellama-language "Chinese")
-  (require 'llm-openai)
-  (setopt ellama-provider
-          (make-llm-openai-compatible
-           :url "http://localhost:5432/v1/")
-          llm-warn-on-nonfree nil)
-  ;; display reasoning buffer.
-  (setopt ellama-show-reasoning nil)
-  :config
-  ;; show ellama context in header line in all buffers
-  (ellama-context-header-line-global-mode +1)
-  ;; show ellama session id in header line in all buffers
-  (ellama-session-header-line-global-mode +1))
+;; (require 'use-package)
+;; (require 'ellama)
 
-(require 'ellama)
-(defun ellama-generate-name-by-provider (provider action prompt)
-  (string-join
-   (flatten-tree
-    (list (split-string (format "%s" action) "-")
-          (format "%s" (buffer-name))
-          (format "(%s)" (llm-name provider))))
-   " "))
-(setopt ellama-naming-scheme #'ellama-generate-name-by-provider)
+;; (use-package ellama
+;;   :ensure t
+;;   :bind ("C-c x" . ellama)
+;;   ;; send last message in chat buffer with C-c C-c
+;;   :hook (org-ctrl-c-ctrl-c-final . ellama-chat-send-last-message)
+;;   :init
+;;   (setopt ellama-language "Chinese")
+;;   (require 'llm-openai)
+;;   (setopt ellama-provider
+;;           (make-llm-openai-compatible
+;;            :url "http://localhost:5432/v1/")
+;;           llm-warn-on-nonfree nil)
+;;   ;; display reasoning buffer.
+;;   (setopt ellama-show-reasoning nil)
+;;   :config
+;;   ;; show ellama context in header line in all buffers
+;;   (ellama-context-header-line-global-mode +1)
+;;   ;; show ellama session id in header line in all buffers
+;;   (ellama-session-header-line-global-mode +1))
 
-(keymap-global-set "C-c C-t" 'ellama-translate-buffer)
-(keymap-global-set "C-c t" 'ellama-translate)
+;; (defun ellama-generate-name-by-provider (provider action prompt)
+;;   (string-join
+;;    (flatten-tree
+;;     (list (split-string (format "%s" action) "-")
+;;           (format "%s" (buffer-name))
+;;           (format "(%s)" (llm-name provider))))
+;;    " "))
+;; (setopt ellama-naming-scheme #'ellama-generate-name-by-provider)
 
-(provide 'personal-llvm)
+;; (keymap-global-set "C-c C-t" 'ellama-translate-buffer)
+;; (keymap-global-set "C-c t" 'ellama-translate)
+
+;; (provide 'personal-llvm)
 ;;; personal-llvm.el ends here

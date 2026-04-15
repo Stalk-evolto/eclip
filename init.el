@@ -42,11 +42,12 @@
 (add-to-list 'load-path eclip-modules-dir)
 (add-to-list 'load-path eclip-personal-dir)
 
-(require 'eclip-package)
-(require 'eclip-customize)
+;; Load core dir elisp files.
+(when (file-exists-p eclip-core-dir)
+  (mapc 'load (directory-files eclip-core-dir 't "^[^#\.].*\\el$")))
 
 ;; Load modules dir elisp files.
-(when (file-exists-p eclip-personal-dir)
+(when (file-exists-p eclip-modules-dir)
   (mapc 'load (directory-files eclip-modules-dir 't "^[^#\.].*\\el$")))
 
 ;; Load personal dir elisp files.

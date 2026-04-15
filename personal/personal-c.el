@@ -34,4 +34,5 @@
   (setenv "LD_LIBRARY_PATH" (getenv "LIBRARY_PATH")))
 (add-hook 'c-mode-common-hook #'setenv-ld-library-path)
 
+(provide 'personal-c)
 ;;; personal-c.el ends here

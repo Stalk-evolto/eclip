@@ -33,4 +33,5 @@
                  :type ( :@type "proxyTypeMtproto"
                          :secret "1b3e58008e4a2838505ea99838db21df"))))
 
+(provide 'personal-telega)
 ;;; personal-telega.el ends here

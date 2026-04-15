@@ -24,8 +24,10 @@
 
 ;;; Code:
 
+(require 'epa-file)
+(require 'epa-hook)
 (setq epa-file-cache-passphrase-for-symmetric-encryption nil)
-(setq epa-file-inbitude-auto-save t)
+(setq epa-file-inhibit-auto-save t)
 
 (provide 'eclip-easypg)
 ;;; eclip-easypg.el ends here

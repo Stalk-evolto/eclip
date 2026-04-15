@@ -30,6 +30,7 @@
 ;; Set theme.
 (load-theme 'modus-vivendi)
 
+(require 'tool-bar)
 ;; Disable toolbar.
 (tool-bar-mode -1)
 
