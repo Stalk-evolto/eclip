@@ -1,6 +1,6 @@
 (use-modules (guix)
              (guix build-system emacs)
-             ((guix license) #:prefix license:)
+             ((guix licenses) #:prefix license:)
              (guix git-download)
              (gnu packages texinfo)
              (gnu packages version-control)
