@@ -24,9 +24,6 @@
 
 ;;; Code:
 
-;; Disable startup screen.
-(setq inhibit-startup-screen t)
-
 ;; Set theme.
 (load-theme 'modus-vivendi)
 

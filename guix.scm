@@ -44,18 +44,7 @@
   (build-system emacs-build-system)
   (arguments
    (list
-    #:include #~(cons* "^core/" "^modules/" "^personal/" %default-include)
-    #:phases
-    #~(modify-phases %standard-phases
-	(add-before 'move-doc 'install-symlink
-	  (lambda* (#:key outputs #:allow-other-keys)
-	    (use-modules (guix build utils))
-	    (let* ((out (assoc-ref outputs "out"))
-		   (elpa-dir (elpa-directory out)))
-	      (mkdir-p (string-append elpa-dir "/savefile/"))
-	      ;; (symlink elpa-dir
-	      ;; 	       (string-append (getenv "HOME") "/" ".test.d"))
-	      ))))))
+    #:include #~(cons* "^core/" "^modules/" "^personal/" %default-include)))
   (synopsis "Emacs config files.")
   (description "Eclip is Emacs config files.")
   (home-page "https://stalk-evolto.github.io")
