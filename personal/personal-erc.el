@@ -24,7 +24,7 @@
 
 ;;; Code:
 
-(defun erc-libera ()
+(defun erc-ilita ()
   (interactive)
     (erc :server "127.0.0.1"
      :port 12345
@@ -35,7 +35,7 @@
 ;; Set ERC connect Pounce to connect irc.libera.chat
 ;; Befor you need config the CertFP and SASL to your NickName.
 ;; Than you need config Pounce in dotfiles/config/systems/system.scm
-(defun erc-ilita ()
+(defun erc-libera ()
   (interactive)
   (erc-tls :server "127.0.0.1"
          :port 6697

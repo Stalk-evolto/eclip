@@ -24,6 +24,7 @@
 
 ;;; Code:
 
+(require 'telega-customize)
 (setq telega-proxies
       (list
        '(:server "localhost" :port 8440 :enable t

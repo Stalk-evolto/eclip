@@ -32,6 +32,8 @@
 	 emacs-guix
 	 emacs-geiser
 	 emacs-geiser-guile
+         emacs-ellama
+         emacs-telega
 	 emacs-paredit
 	 emacs-oauth2
 	 emacs-yaml
