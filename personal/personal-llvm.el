@@ -44,7 +44,7 @@
 ;; show ellama session id in header line in all buffers
 (ellama-session-header-line-global-mode +1)
 
-(defun ellama-generate-name-by-provider (provider action)
+(defun ellama-generate-name-by-provider (provider action prompt)
   (string-join
    (flatten-tree
     (list (split-string (format "%s" action) "-")
