@@ -33,7 +33,7 @@
   (add-hook 'lisp-interaction-mode-hook #'enable-paredit-mode)
   (add-hook 'scheme-mode-hook #'enable-paredit-mode)
 
-  '(progn
+  (progn
      (define-key paredit-mode-map (kbd "C-j") nil)
      (define-key paredit-mode-map (kbd "RET") nil)
      (define-key paredit-mode-map (kbd "M-n") nil)
