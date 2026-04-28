@@ -26,7 +26,7 @@
 
 (require 'ellama)
 
-(keymap-global-set "C-c x" 'ellama)
+(keymap-global-set "C-x c c" 'ellama)
 
 (setq ellama-language "Chinese")
 
@@ -53,8 +53,8 @@
    " "))
 (setq ellama-naming-scheme #'ellama-generate-name-by-provider)
 
-(keymap-global-set "C-c C-t" 'ellama-translate-buffer)
-(keymap-global-set "C-c t" 'ellama-translate)
+(keymap-global-set "C-x c C-t" 'ellama-translate-buffer)
+(keymap-global-set "C-x c t" 'ellama-translate)
 
 (provide 'personal-llvm)
 ;;; personal-llvm.el ends here

@@ -1,3 +1,19 @@
+;;  guix.scm --- Pakcgae define.
+;; Copyright (C) 2026  Stalk Evolto <stalk@stalk-laptop>
+
+;; This program is free software; you can redistribute it and/or modify
+;; it under the terms of the GNU General Public License as published by
+;; the Free Software Foundation, either version 3 of the License, or
+;; (at your option) any later version.
+
+;; This program is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+;; GNU General Public License for more details.
+
+;; You should have received a copy of the GNU General Public License
+;; along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
 (use-modules (guix packages)
              (guix build-system emacs)
              ((guix licenses) #:prefix license:)
@@ -11,6 +27,7 @@
 	     (gnu packages guile-xyz)
 	     (gnu packages commencement)
 	     (gnu packages llvm)
+             (gnu packages python-xyz)
 	     (gnu packages gdb))
 
 (define vcs-file?
@@ -37,12 +54,15 @@
 	 emacs-paredit
 	 emacs-oauth2
 	 emacs-yaml
+         emacs-markdown-mode
+         python-markdown
 	 guile-3.0-latest
 	 guile-readline
 	 guile-colorized
 	 gcc-toolchain
 	 gdb
-	 clang))
+	 clang
+         python-lsp-server))
   (build-system emacs-build-system)
   (arguments
    (list
