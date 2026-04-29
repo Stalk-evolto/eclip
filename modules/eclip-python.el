@@ -27,7 +27,8 @@
 (require 'python)
 (defun python-mode-defaults ()
   "Defaults for Python programming edit."
-  (setq python-indent-offset 4))
+  (setq python-indent-offset 4)
+  (setq python-skeleton-autoinsert t))
 
 (add-hook 'python-mode-hook 'python-mode-defaults)
 
@@ -36,6 +37,17 @@
 
 ;; set hs-minor for create hide.
 (add-hook 'python-mode-hook 'hs-minor-mode)
+
+;; set abbrev mode.
+(add-hook 'python-mode-hook 'abbrev-mode)
+
+(define-skeleton skel-python-main
+  "Insert python @code{if __name__ == '__main__'}."
+  nil
+  "if __name__ == '__main__':"
+  ?\n > _
+  )
+(define-abbrev python-mode-abbrev-table "main" "" 'skel-python-main)
 
 (provide 'eclip-python)
 ;;; eclip-python.el ends here
