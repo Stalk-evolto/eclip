@@ -30,5 +30,7 @@
 (add-hook 'after-init-hook 'global-guix-prettify-mode)
 (add-hook 'scheme-mode-hook 'guix-devel-mode)
 
+(keymap-global-set "C-x g" 'guix-popup)
+
 (provide 'eclip-scheme)
 ;;; eclip-scheme.el ends here
