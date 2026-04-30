@@ -196,5 +196,15 @@ The skeleton will be bound to c-skeleton-NAME."
   )
 (define-abbrev c-mode-abbrev-table "func" "" 'skel-c-function-define :system t)
 
+;;; Key bindings.
+(define-key c-mode-map "\C-c\C-td" #'skel-c-function-define)
+(define-key c-mode-map "\C-c\C-ti" #'skel-c-if)
+(define-key c-mode-map "\C-c\C-t\C-i" #'skel-c-ifdef)
+(define-key c-mode-map "\C-c\C-tf" #'skel-c-for)
+(define-key c-mode-map "\C-c\C-tw" #'skel-c-while)
+(define-key c-mode-map "\C-c\C-t\C-w" #'skel-c-do)
+(define-key c-mode-map "\C-c\C-ts" #'skel-c-switch)
+(define-key c-mode-map "\C-c\C-tt" #'skel-c-struct-union-enum)
+
 (provide 'eclip-c)
 ;;; eclip-c.el ends here
