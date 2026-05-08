@@ -55,6 +55,7 @@
 	 emacs-oauth2
 	 emacs-yaml
          emacs-markdown-mode
+         emacs-nftables-mode
          python-markdown
 	 guile-3.0-latest
 	 guile-readline
