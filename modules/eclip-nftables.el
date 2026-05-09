@@ -24,6 +24,9 @@
 
 ;;; Code:
 
+(require 'nftables-mode)
+
+(add-to-list 'auto-mode-alist '("nftables.conf\\'" . nftables-mode))
 (defun nftables-flymake (report-fn &rest _args)
   "Flymake backends: @code{nft -c -f} check."
   (when-let ((buf (current-buffer))
