@@ -51,6 +51,8 @@
 	 emacs-geiser-guile
          emacs-ellama
          emacs-telega
+         emacs-auctex
+         emacs-cdlatex
 	 emacs-paredit
 	 emacs-oauth2
 	 emacs-yaml

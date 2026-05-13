@@ -1,9 +1,9 @@
-;;; eclip-nftables.el --- nftables edit mode config.  -*- lexical-binding: t; -*-
+;;; eclip-latex.el --- LaTeX edit config.            -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2026  Stalk Evolto
 
 ;; Author: Stalk Evolto <stalk@stalk-laptop>
-;; Keywords: lisp
+;; Keywords: tex, lisp
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -24,9 +24,11 @@
 
 ;;; Code:
 
-(require 'nftables-mode)
+(require 'auctex)
+(setq TeX-auto-save t)
+(setq TeX-parse-self t)
+(setq-default TeX-master nil)
+(add-hook 'LaTeX-mode-hook #'turn-on-cdlatex)
 
-(add-to-list 'auto-mode-alist '("nft\\(?:ables\\)?\\'" . nftables-mode))
-
-(provide 'eclip-nftables)
-;;; eclip-nftables.el ends here
+(provide 'eclip-latex)
+;;; eclip-latex.el ends here
