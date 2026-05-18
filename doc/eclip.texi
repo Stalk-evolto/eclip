@@ -51,6 +51,7 @@ The document was typeset with
 * 安装::
 * 编写之禅::
 * 按键设计::
+* Eclip 编写与拓展::
 * GNU Free Documentation License::
 * Index::
 @end menu
@@ -84,7 +85,7 @@ Eclip 的编写理念:
 不偏离 Emacs manual 中的按键绑定，配置出错也能快速适应 @code{Emacs -Q} 启动修复。
 @end itemize
 
-@node 按键设计, GNU Free Documentation License, 编写之禅, Top
+@node 按键设计, Eclip 编写与拓展, 编写之禅, Top
 @chapter 按键设计
 
 我对 Emacs 按键设计的个人理解。
@@ -142,7 +143,7 @@ forward-word 向前移动一个单词像是
 @code{discrube-function} 显示函数信息
 @end table
 
-@node Eclip 编写与拓展
+@node Eclip 编写与拓展, GNU Free Documentation License, 按键设计, Top
 @chapter Eclip 编写与拓展
 
 Eclip 目录结构
@@ -150,9 +151,7 @@ Eclip 目录结构
 @example
 @end example
 
-@table
-
-@node GNU Free Documentation License, Index, 按键设计, Top
+@node GNU Free Documentation License, Index, Eclip 编写与拓展, Top
 @appendix GNU Free Documentation License
 @cindex license, GNU Free Documentation License
 @c Get fdl.texi from https://www.gnu.org/licenses/fdl.html

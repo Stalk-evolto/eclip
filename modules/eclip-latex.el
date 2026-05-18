@@ -30,5 +30,14 @@
 (setq-default TeX-master nil)
 (add-hook 'LaTeX-mode-hook #'turn-on-cdlatex)
 
+;; set XeTeX mode in TeX/LaTeX
+(add-hook 'LaTeX-mode-hook
+          (lambda()
+             (add-to-list 'TeX-command-list '("XeLaTeX" "%`xelatex%(mode)%' %t" TeX-run-TeX nil t))
+             (setq TeX-command-default "XeLaTeX")
+             (setq TeX-save-query nil)
+             (setq TeX-show-compilation t)))
+
+
 (provide 'eclip-latex)
 ;;; eclip-latex.el ends here

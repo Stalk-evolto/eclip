@@ -70,21 +70,14 @@
 ;; Enable dired-x.
 (with-eval-after-load 'dired
   (require 'dired-x)
-  ;; Set dired-x global variables here.  For example:
-  ;; (setq dired-x-hands-off-my-keys nil)
-  )
-(add-hook 'dired-mode-hook
-          (lambda ()
-            ;; Set dired-x buffer-local variables here.  For example:
-            ;; (dired-omit-mode 1)
-            ))
+  (setq dired-x-hands-off-my-keys nil))
 
 ;; Enable winner mode.
 (winner-mode +1)
 
-;;; Set shift-{left,right,up,down} move point to window.
+;;; Set C-x shift-{left,right,up,down} move point to window.
 (require 'windmove)
-(windmove-default-keybindings)
+(windmove-default-keybindings '([24] super))
 (setq windmove-wrap-around t)
 
 ;; Set backup and autosave files in tmp dir.
