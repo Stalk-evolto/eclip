@@ -75,11 +75,6 @@
 ;; Enable winner mode.
 (winner-mode +1)
 
-;;; Set C-x shift-{left,right,up,down} move point to window.
-(require 'windmove)
-(windmove-default-keybindings '([24] super))
-(setq windmove-wrap-around t)
-
 ;; Set backup and autosave files in tmp dir.
 (setq backup-directory-alist
       `((".*" . ,temporary-file-directory)))

@@ -26,6 +26,7 @@
 
 (require 'guix-devel)
 (require 'compile)
+(require 'geiser)
 
 (defvar compilation-run-virtual-machine-arguments
   "-m 2048 -smp 2 -nic user,model=virtio-net-pci"
@@ -45,9 +46,20 @@
          "guix-virtual-machine"
          "*Guix-Virtual-Machine*"
          (concat (match-string-no-properties 0) " "
-                 compilation-run-virtual-machine-arguments))))))
+                 compilation-run-virtual-machine-arguments))
+        (remove-hook 'compilation-finish-functions 'compilation-finish-run-virtual-machine)))))
 
-(add-hook 'compilation-finish-functions 'compilation-finish-run-virtual-machine)
+(defun guix-devel-run-system-vm ()
+  "Build operating system defined to vm and run by the current tor-level"
+  (interactive)
+  (add-hook 'compilation-finish-functions 'compilation-finish-run-virtual-machine)
+  (compile (concat "guix system vm --load-path="
+                   (expand-file-name "." (project-root (project-current))) " "
+                   (if buffer-file-name
+                       (shell-quote-argument
+                        (buffer-file-name))))))
+
+(define-key guix-devel-mode-map "\C-c.v" 'guix-devel-run-system-vm)
 
 (provide 'eclip-guix)
 ;;; eclip-guix.el ends here
